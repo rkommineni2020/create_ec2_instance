@@ -1,0 +1,22 @@
+server:
+  instance_type: t1.micro
+  ami_type: ami-0947d2ba12ee1ff75
+  architecture: x86_64
+  root_device_type: ebs
+  virtualization_type: hvm
+  min_count: 1
+  max_count: 1
+  volumes:
+    - device: /dev/xvda
+      size_gb: 10
+      type: ext4
+      mount: /
+    - device: /dev/xvdf
+      size_gb: 10
+      type: xfs
+      mount: /data
+  users:
+    - login: user1
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCulhQDTxe4fcVZIiLAqBWE8BHJDnDlRfmFvSHFI6IexMtzSFhFz36G2/QEkNqo87hC2hgh9QaUwgQabLi1pYAyFoAbEnkjoup4N4b/Ief16ER9XVrcvdXh4R0GAmTv0j3a1h9EKiOU6S09mz37tH+66TWbNdQGtPeJhfDgpNSRJaHpkBDveMQfrZOiHAV9NcvK6Lnn6nrMUu+zKMtgxik1im0gDjcVkvgv2qcmNgzxKKmfc5T3isUdHyorOmRI9igO/TmV11vnSADXRj1u/HFHRGEnV3SadOy5sxsJ2lEf1bDQRkii1os9nAtisgITWMt/08bp92po6leZu6+2k3Zn user1@localhost
+    - login: user2
+      ssh_key: --user2 ssh public key goes here-- user2@localhost
